@@ -5,7 +5,7 @@ using safeclimb_security.Security.Security.Domain.Services.Communication;
 using safeclimb_security.Security.Shared.Domain.Services;
 using Swashbuckle.AspNetCore.Annotations;
 
-namespace safeclimb_security.Security.Shared.Controllers
+namespace safeclimb_security.Security.Security.Controllers
 {
     [Produces("application/json")]
     [ApiController]
@@ -29,16 +29,16 @@ namespace safeclimb_security.Security.Shared.Controllers
         [HttpPost("auth/sign-in")]
         public async Task<IActionResult> Authenticate(AuthenticateRequest request)
         {
-            var response = await _userService.Authenticate(request);
-            if (response.Email == null)
-                return Ok(response);
-            if (response.LastName == null)
-            {
-                var resourcesAgency = _mapper.Map<AuthenticateResponse, AuthenticateAgencyResponse>(response);
-                return Ok(resourcesAgency);
-            }
-            var resourcesCustomer = _mapper.Map<AuthenticateResponse, AuthenticateCustomerResponse>(response);
-            return Ok(resourcesCustomer);
+            await _userService.Authenticate(request);
+            //if (response.Email == null)
+            //    return Ok(response);
+            //if (response.LastName == null)
+            //{
+            //    var resourcesAgency = _mapper.Map<AuthenticateResponse, AuthenticateAgencyResponse>(response);
+            //    return Ok(resourcesAgency);
+            //}
+            //var resourcesCustomer = _mapper.Map<AuthenticateResponse, AuthenticateCustomerResponse>(response);
+            return Ok("resourcesCustomer");
         }
     }
 }

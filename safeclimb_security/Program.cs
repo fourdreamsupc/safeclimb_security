@@ -5,6 +5,7 @@ using safeclimb_security.Security.Security.Authorization.Handlers.Implementation
 using safeclimb_security.Security.Security.Authorization.Handlers.Interfaces;
 using safeclimb_security.Security.Security.Authorization.Middleware;
 using safeclimb_security.Security.Security.Authorization.Settings;
+using safeclimb_security.Security.Security.Services;
 using safeclimb_security.Security.Shared.Domain.Repositories;
 using safeclimb_security.Security.Shared.Domain.Services;
 using safeclimb_security.Security.Shared.Persistence.Contexts;
@@ -25,7 +26,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddCors();
 
 builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
-builder.Services.AddSwaggerGen(options =>
+builder.Services.AddSwaggerGen(options => 
 {
     // Add API Documentation Information
         
@@ -59,6 +60,7 @@ builder.Services.AddRouting(options =>
 builder.Services.AddScoped<IJwtHandler, JwtHandler>();
 builder.Services.AddScoped<ISubscriptionRepository, SubscriptionRepository>();
 builder.Services.AddScoped<ISubscriptionService, SubscriptionService>();
+builder.Services.AddScoped<IUserService, UserService>();
 
 //builder.Services.AddScoped<IUserService, UserService>();
 

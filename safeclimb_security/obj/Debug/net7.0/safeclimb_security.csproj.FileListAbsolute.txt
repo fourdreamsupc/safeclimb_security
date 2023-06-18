@@ -64,3 +64,4 @@ C:\Users\SETTING\Documents\Ciclo 7 upc\Fundamentos\safeclimb_security\safeclimb_
 C:\Users\SETTING\Documents\Ciclo 7 upc\Fundamentos\safeclimb_security\safeclimb_security\obj\Debug\net7.0\safeclimb_security.pdb
 C:\Users\SETTING\Documents\Ciclo 7 upc\Fundamentos\safeclimb_security\safeclimb_security\obj\Debug\net7.0\safeclimb_security.genruntimeconfig.cache
 C:\Users\SETTING\Documents\Ciclo 7 upc\Fundamentos\safeclimb_security\safeclimb_security\obj\Debug\net7.0\ref\safeclimb_security.dll
+C:\Users\SETTING\Documents\Ciclo 7 upc\Fundamentos\safeclimb_security\safeclimb_security\bin\Debug\net7.0\Newtonsoft.Json.dll

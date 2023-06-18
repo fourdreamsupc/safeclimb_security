@@ -1,3 +1,4 @@
+
 namespace safeclimb_security.Security.Security.Domain.Services.Communication
 {
     public class AuthenticateResponse
