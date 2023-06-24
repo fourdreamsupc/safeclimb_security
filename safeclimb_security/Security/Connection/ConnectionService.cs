@@ -1,6 +1,4 @@
-﻿using System.Text.Json;
-using Newtonsoft.Json;
-using safeclimb_security.Security.HttpResource;
+﻿using Newtonsoft.Json;
 
 namespace safeclimb_security.Security.Connection;
 

@@ -1,7 +1,9 @@
 using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 using System.Text;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using safeclimb_security.Security.HttpResource;
 using safeclimb_security.Security.Security.Authorization.Handlers.Interfaces;
 using safeclimb_security.Security.Security.Authorization.Settings;
 
@@ -16,43 +18,43 @@ namespace safeclimb_security.Security.Security.Authorization.Handlers.Implementa
             _appSettings = appSettings.Value;
         }
 
-        //public string GenerateToken(Customer customer)
-        //{
-        //    var tokenHandler = new JwtSecurityTokenHandler();
-        //    var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
-        //    var tokenDescriptor = new SecurityTokenDescriptor
-        //    {
-        //        Subject = new ClaimsIdentity(new[]
-        //        {
-        //            new Claim("id", customer.Id.ToString())
-        //        }),
-        //        Expires = DateTime.UtcNow.AddDays(7),
-        //        SigningCredentials = 
-        //            new SigningCredentials(new SymmetricSecurityKey(key),
-        //            SecurityAlgorithms.HmacSha256Signature)
-        //    };
-        //    var token = tokenHandler.CreateToken(tokenDescriptor);
-        //    return tokenHandler.WriteToken(token);
-        //}
-        //
-        //public string GenerateToken(Agency agency)
-        //{
-        //    var tokenHandler = new JwtSecurityTokenHandler();
-        //    var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
-        //    var tokenDescriptor = new SecurityTokenDescriptor
-        //    {
-        //        Subject = new ClaimsIdentity(new[]
-        //        {
-        //            new Claim("id", agency.Id.ToString())
-        //        }),
-        //        Expires = DateTime.UtcNow.AddDays(7),
-        //        SigningCredentials = 
-        //            new SigningCredentials(new SymmetricSecurityKey(key),
-        //                SecurityAlgorithms.HmacSha256Signature)
-        //    };
-        //    var token = tokenHandler.CreateToken(tokenDescriptor);
-        //    return tokenHandler.WriteToken(token);
-        //}
+        public string GenerateToken(Customer customer)
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(new[]
+                {
+                    new Claim("id", customer.Id.ToString())
+                }),
+                Expires = DateTime.UtcNow.AddDays(7),
+                SigningCredentials = 
+                    new SigningCredentials(new SymmetricSecurityKey(key),
+                    SecurityAlgorithms.HmacSha256Signature)
+            };
+            var token = tokenHandler.CreateToken(tokenDescriptor);
+            return tokenHandler.WriteToken(token);
+        }
+        
+        public string GenerateToken(Agency agency)
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(new[]
+                {
+                    new Claim("id", agency.Id.ToString())
+                }),
+                Expires = DateTime.UtcNow.AddDays(7),
+                SigningCredentials = 
+                    new SigningCredentials(new SymmetricSecurityKey(key),
+                        SecurityAlgorithms.HmacSha256Signature)
+            };
+            var token = tokenHandler.CreateToken(tokenDescriptor);
+            return tokenHandler.WriteToken(token);
+        }
 
         public int? ValidateToken(string token)
         {

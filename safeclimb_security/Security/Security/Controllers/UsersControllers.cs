@@ -29,16 +29,16 @@ namespace safeclimb_security.Security.Security.Controllers
         [HttpPost("auth/sign-in")]
         public async Task<IActionResult> Authenticate(AuthenticateRequest request)
         {
-            await _userService.Authenticate(request);
-            //if (response.Email == null)
-            //    return Ok(response);
-            //if (response.LastName == null)
-            //{
-            //    var resourcesAgency = _mapper.Map<AuthenticateResponse, AuthenticateAgencyResponse>(response);
-            //    return Ok(resourcesAgency);
-            //}
-            //var resourcesCustomer = _mapper.Map<AuthenticateResponse, AuthenticateCustomerResponse>(response);
-            return Ok("resourcesCustomer");
+            var response = await _userService.Authenticate(request);
+            if (response.Email == null)
+                return Ok(response);
+            if (response.LastName == null)
+            {
+                var resourcesAgency = _mapper.Map<AuthenticateResponse, AuthenticateAgencyResponse>(response);
+                return Ok(resourcesAgency);
+            }
+            var resourcesCustomer = _mapper.Map<AuthenticateResponse, AuthenticateCustomerResponse>(response);
+            return Ok(resourcesCustomer);
         }
     }
 }

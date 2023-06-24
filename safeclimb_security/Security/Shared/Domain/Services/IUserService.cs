@@ -4,6 +4,6 @@ namespace safeclimb_security.Security.Shared.Domain.Services
 {
     public interface IUserService
     {
-        Task Authenticate(AuthenticateRequest request);
+        Task<AuthenticateResponse> Authenticate(AuthenticateRequest request);
     }
 }
