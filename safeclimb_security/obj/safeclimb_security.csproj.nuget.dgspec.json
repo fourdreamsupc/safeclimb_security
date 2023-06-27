@@ -1,30 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\SETTING\\Documents\\Ciclo 7 upc\\Fundamentos\\safeclimb_security\\safeclimb_security\\safeclimb_security.csproj": {}
+    "C:\\Users\\James\\Github\\safeclimb_security\\safeclimb_security\\safeclimb_security.csproj": {}
   },
   "projects": {
-    "C:\\Users\\SETTING\\Documents\\Ciclo 7 upc\\Fundamentos\\safeclimb_security\\safeclimb_security\\safeclimb_security.csproj": {
+    "C:\\Users\\James\\Github\\safeclimb_security\\safeclimb_security\\safeclimb_security.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\SETTING\\Documents\\Ciclo 7 upc\\Fundamentos\\safeclimb_security\\safeclimb_security\\safeclimb_security.csproj",
+        "projectUniqueName": "C:\\Users\\James\\Github\\safeclimb_security\\safeclimb_security\\safeclimb_security.csproj",
         "projectName": "safeclimb_security",
-        "projectPath": "C:\\Users\\SETTING\\Documents\\Ciclo 7 upc\\Fundamentos\\safeclimb_security\\safeclimb_security\\safeclimb_security.csproj",
-        "packagesPath": "C:\\Users\\SETTING\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\SETTING\\Documents\\Ciclo 7 upc\\Fundamentos\\safeclimb_security\\safeclimb_security\\obj\\",
+        "projectPath": "C:\\Users\\James\\Github\\safeclimb_security\\safeclimb_security\\safeclimb_security.csproj",
+        "packagesPath": "C:\\Users\\James\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\James\\Github\\safeclimb_security\\safeclimb_security\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\SETTING\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\James\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "http://nuget.group-utility.com/nuget/Nuget/v3/index.json": {}
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
